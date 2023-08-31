@@ -1,8 +1,6 @@
 <div class="container">
     <div class="search-bar">
-        <!-- <mat-form-field> -->
-            <input matInput placeholder="Search by name" [(ngModel)]="searchText" (ngModelChange)="applyFilter()">
-        <!-- </mat-form-field> -->
+        <input matInput placeholder="Search by restaurant name" [(ngModel)]="searchText" (ngModelChange)="applyFilter()">
     </div>
     <div class="heading">
         <h2>{{filteredRestaurants.length}} restaurants to explore</h2>
@@ -13,17 +11,6 @@
             <img [src]="'assets/' + restaurant.restroImage" alt="{{ restaurant.restroImage }}" class="menu-image">
             <h2>{{ restaurant.name }}</h2>
             <p>Location: {{ restaurant.location }}</p>
-            <div class="menu-carousel">
-                <!-- <owl-carousel-o [options]="carouselOptions">
-
-            <ng-container *ngFor="let menuItem of restaurant.menuItems" class="item">
-                <ng-template class="slide" carouselSlide [id]="menuItem.id">
-                    <app-menu-item [menuItem]="menuItem"></app-menu-item>
-                </ng-template>
-              </ng-container>
-
-        </owl-carousel-o> -->
-            </div>
         </mat-card>
     </div>
 </div>

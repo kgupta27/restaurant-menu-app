@@ -21,7 +21,13 @@ export class MockApiService {
           price: 10,
           images: ['pizza-margherita-1.jpg', 'pizza-margherita-2.jpg'],
         },
-        // Other menu items...
+        {
+          id: 102,
+          name: 'Pizza Margherita',
+          description: 'Classic Italian pizza',
+          price: 20,
+          images: ['pizza-margherita-1.jpg', 'pizza-margherita-2.jpg'],
+        },
       ],
     },
     {

@@ -1,21 +1,25 @@
-  <div class="menu-item">
-    <mat-card class="menu-item-card">
-        <h3>{{ menuItem.name }}</h3>
-        <p>{{ menuItem.description }}</p>
-      <div class="menu-image-carousel">
-        <owl-carousel-o [options]="carouselOptions">
-            <ng-container *ngFor="let image of menuItem.images" class="item">
-                <ng-template class="slide" carouselSlide>
-                    <img [src]="'assets/' + image" alt="{{ menuItem.name }}" class="menu-image">
-                </ng-template>
-              </ng-container>
+ <div class="container">
+    <div class="search-bar">
+        <input matInput placeholder="Search item" [(ngModel)]="search" (ngModelChange)="applyFilter()">
+    </div>
+    <div class="heading">
+        <h2>{{filteredItem.length}} items to choose</h2>
+    </div>
 
-
-            <!-- <div *ngFor="let image of menuItem.images" class="item">
-              <img [src]="'assets/' + image" alt="{{ menuItem.name }}" class="menu-image">
-            </div> -->
-          </owl-carousel-o>
-      </div>
-      <button mat-button color="primary" (click)="addToCart(menuItem)">Add to Cart</button>
-    </mat-card>
-  </div>
+    <div class="restaurant-card" *ngFor="let item of filteredItem">
+        <mat-card class="restaurant-card-content">
+            <h2>{{ item.name }}</h2>
+            <p>{{ item.description }}</p>
+            <div class="menu-image-carousel">
+                <owl-carousel-o [options]="carouselOptions">
+                  <ng-container *ngFor="let image of item.images">
+                    <ng-template carouselSlide>
+                      <img [src]="'assets/' + image" alt="{{ item.name }}" class="menu-image">
+                    </ng-template>
+                  </ng-container>
+                </owl-carousel-o>
+              </div>
+            <button mat-button color="primary" (click)="addToCart(item)">Add to Cart</button>
+        </mat-card>
+    </div>
+</div>
