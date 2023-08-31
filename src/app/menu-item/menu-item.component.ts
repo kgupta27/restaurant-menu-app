@@ -19,7 +19,7 @@ export class MenuItemComponent {
   constructor(private cartService: CartService) { }
 
   ngOnInit(){
-    console.log("this.menuItem",this.menuItem);
+    // console.log("this.menuItem",this.menuItem);
   }
 
   addToCart(item: any): void {

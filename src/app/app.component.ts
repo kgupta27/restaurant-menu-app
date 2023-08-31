@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CartService } from './services/cart.service';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,14 @@ import { CartService } from './services/cart.service';
 })
 export class AppComponent {
   title = 'restaurant-menu-app';
+  @ViewChild('sidenav') sidenav!: MatSidenav;
 
   constructor(public cartService: CartService){
 
+  }
+
+  toggleSidebar(){
+    console.log(this.sidenav);
+    this.sidenav.toggle();
   }
 }

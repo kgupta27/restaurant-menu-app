@@ -11,6 +11,7 @@ export class MockApiService {
     {
       id: 1,
       name: 'Restaurant A',
+      restroImage: 'Restaurant1.jpg',
       location: 'City A',
       menuItems: [
         {
@@ -26,6 +27,7 @@ export class MockApiService {
     {
       id: 2,
       name: 'Restaurant B',
+      restroImage: 'Restaurant2.jpg',
       location: 'City B',
       menuItems: [
         {
@@ -41,6 +43,7 @@ export class MockApiService {
     {
       id: 3,
       name: 'Restaurant C',
+      restroImage: 'Restaurant3.jpg',
       location: 'City C',
       menuItems: [
         {
@@ -56,6 +59,7 @@ export class MockApiService {
     {
       id: 4,
       name: 'Restaurant D',
+      restroImage: 'Restaurant4.jpg',
       location: 'City D',
       menuItems: [
         {
