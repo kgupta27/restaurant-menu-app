@@ -1,0 +1,27 @@
+<div class="heading">
+    <h2>Restaurant List</h2>
+</div>
+
+<div class="view-cart">
+<button mat-button color="primary" routerLink="/cart">View Cart</button>
+</div>
+
+<div class="restaurant-card" *ngFor="let restaurant of restaurants">
+    <mat-card class="restaurant-card-content">
+      <h2>{{ restaurant.name }}</h2>
+      <p>Location: {{ restaurant.location }}</p>
+      <div class="menu-carousel">
+        <owl-carousel-o [options]="carouselOptions">
+
+            <ng-container *ngFor="let menuItem of restaurant.menuItems" class="item">
+                <ng-template class="slide" carouselSlide [id]="menuItem.id">
+                    <app-menu-item [menuItem]="menuItem"></app-menu-item>
+                </ng-template>
+              </ng-container>
+              
+        </owl-carousel-o>
+      </div>
+    </mat-card>
+  </div>
+
+  

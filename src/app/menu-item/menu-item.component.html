@@ -1,0 +1,21 @@
+  <div class="menu-item">
+    <mat-card class="menu-item-card">
+        <h3>{{ menuItem.name }}</h3>
+        <p>{{ menuItem.description }}</p>
+      <div class="menu-image-carousel">
+        <owl-carousel-o [options]="carouselOptions">
+            <ng-container *ngFor="let image of menuItem.images" class="item">
+                <ng-template class="slide" carouselSlide>
+                    <img [src]="'assets/' + image" alt="{{ menuItem.name }}" class="menu-image">
+                </ng-template>
+              </ng-container>
+
+
+            <!-- <div *ngFor="let image of menuItem.images" class="item">
+              <img [src]="'assets/' + image" alt="{{ menuItem.name }}" class="menu-image">
+            </div> -->
+          </owl-carousel-o>
+      </div>
+      <button mat-button color="primary" (click)="addToCart(menuItem)">Add to Cart</button>
+    </mat-card>
+  </div>

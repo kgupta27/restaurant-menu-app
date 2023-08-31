@@ -1,0 +1,22 @@
+.mat-toolbar {
+    height: 64px; /* Adjust height as needed */
+    font-size: 24px; /* Adjust font size as needed */
+    color: white; /* Text color */
+    position: fixed;
+    z-index: 100;
+    justify-content: center;
+}
+
+.cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 12px;
+    margin-left: -8px;
+}
+
+.cart-icon {
+    right: 20px;
+    position: absolute;
+}

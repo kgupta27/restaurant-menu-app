@@ -1,0 +1,25 @@
+<div class="cart">
+    <h2>Your Cart</h2>
+    <mat-list>
+    <ng-container *ngIf="cartItems.length > 0; else noItemsTemplate">
+      <mat-list-item *ngFor="let item of cartItems; let i = index" class="cart-item">
+        <div class="cart-item-details">
+          <div class="cart-item-image">
+            <img [src]="'assets/' + item.images[0]" alt="{{ item.name }}" class="cart-item-image">
+          </div>
+          <div class="item-info">
+            <h4 mat-line class="item-name">{{ item.name }}</h4>
+            <p mat-line class="item-price">Price: ${{ item.price }}</p>
+          </div>
+          <button mat-icon-button color="warn" (click)="removeItem(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </mat-list-item>
+    </ng-container>
+    <ng-template #noItemsTemplate>
+        <p class="no-items-text">No items added</p>
+    </ng-template>
+    </mat-list>
+  </div>
+  
